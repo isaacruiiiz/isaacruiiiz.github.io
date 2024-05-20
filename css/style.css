@@ -1,0 +1,822 @@
+@font-face {
+  font-family: "Clash Display bold";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-bold-webfont.woff);
+}
+
+@font-face {
+  font-family: "Clash Display semibold";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-semibold-webfont.woff);
+}
+
+@font-face {
+  font-family: "Clash Display regular";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-regular-webfont.woff);
+}
+
+@font-face {
+  font-family: "Clash Display medium";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-medium-webfont.woff);
+}
+
+@font-face {
+  font-family: "Clash Display light";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-light-webfont.woff);
+}
+
+@font-face {
+  font-family: "Clash Display extralight";
+
+  src: url(../webfontkit-20240404-115750/clashdisplay-extralight-webfont.woff);
+}
+
+::selection {
+  background: #5249398d;
+}
+
+#particles-js {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#navbar {
+  background-color: #0000000f;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 0;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.logo h4 a {
+  text-decoration: none;
+  font-family: Clash Display regular;
+  font-size: 24px;
+  color: white;
+}
+
+hr {
+  margin-right: 20%;
+  margin-bottom: 0;
+}
+
+.title-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#title {
+  font-family: "Clash Display bold";
+  font-size: 96px;
+  color: white;
+  margin-bottom: 25px;
+}
+
+#subtitle {
+  font-family: Clash Display medium;
+  font-size: 24px;
+  background: -webkit-linear-gradient(45deg, rgba(83,83,83,1) 0%, rgba(185,185,185,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.swipe-down-container {
+  width: 10%;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#swipe-down-text {
+  font-family: "Sorts Mill Goudy", serif;
+  color: #FFFFFF;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.arrow-1 {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+
+.arrow-2 {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+
+.arrow-1 span, .arrow-2 span{
+  display: block;
+  width: 0.5vw;
+  height: 0.5vw;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+  margin-top: -5px;
+  margin-left: 0;
+  margin-right: -4px;
+  margin-bottom: 0;
+  animation: animate 2s infinite;
+}
+
+.arrow-1 span:nth-child(2), .arrow-2 span:nth-child(2){
+  animation-delay: -0.2s;
+}
+
+.arrow-1 span:nth-child(3), .arrow-2 span:nth-child(3){
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+#scroll-to-projects {
+  position: relative;
+  top: 80vh;
+}
+
+#projects {
+  position: relative;
+  top: 100vh;
+  width: 80%;
+  max-width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#project-title {
+  font-family: "Sorts Mill Goudy", serif;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 50px;
+}
+
+.tile-container {
+  margin-top: 50px;
+}
+
+.technologies-tiles {
+  display: flex;
+  flex-direction: row;
+}
+
+.tile {
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50px;
+  border-color: #655a49;
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-right: 10px;
+}
+
+.tile p {
+  font-family: "Clash Display medium";
+  font-size: 16px;
+  color: #655a49;
+  margin: 0;
+}
+
+.project-bento {
+  width: 100%;
+  height: 425px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.project-bento-1 video {
+  height: 97%;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+#subtitles {
+  position: absolute;
+  bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.858);
+  border: 2px solid #5f5f5f7e;
+  backdrop-filter: blur(2px);
+  color: white;
+  font-family: 'Clash Display medium';
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  width: 150px;
+  min-height: 80px;
+  max-height: 120px;
+  text-align: center;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+#time-indicator {
+  position: absolute;
+  top: 5%;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Clash Display medium';
+  font-size: 16px;
+  opacity: 0;
+}
+
+#playPauseButton {
+  position: absolute;
+  top: 5%;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Clash Display medium';
+  font-size: 16px;
+  opacity: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#playPauseButton:hover {
+  opacity: 1;
+}
+
+#video-1-container {
+  transition: ease-in-out 0.7s;
+}
+
+#video-1-container:hover{
+  transform: scale(1.03);
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 20px 0px #bababa7e;
+}
+
+#video-1-container:hover #subtitles {
+  opacity: 1;
+}
+
+#video-1-container:hover #time-indicator {
+  opacity: 0.7;
+}
+
+#video-1-container:hover #playPauseButton {
+  opacity: 0.7;
+}
+
+.project-bento > div {
+  margin-right: 10px; /* Añade margen a la derecha de cada div */
+}
+
+.project-bento-1 {
+  background-color: #303030;
+  border-radius: 22px;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+.project-bento-2 {
+  height: 100%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.font-bento-container {
+  width: 100%;
+  height: 20%;
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+.font-bento-heading-1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: white;
+  margin: 0;
+}
+
+.font-bento-heading {
+  font-family: "Sorts Mill Goudy", serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  margin: 0;
+  margin-bottom: -10px;
+}
+
+.main-page-bento-container {
+  width: 100%;
+  height: calc(60% - 20px);
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+#foodLink-main-page {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+
+}
+
+.main-page-bento-container img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.color-palette-bento-container {
+  width: 100%;
+  height: 20%;
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+.color-palette-1,
+.color-palette-2,
+.color-palette-3 {
+  border-radius: 22px;
+  height: 90%;
+}
+
+.color-palette-1 {
+  background-color: #FFFFFF;
+  width: 31%;
+}
+
+.color-palette-2 {
+  background-color: #B3B3B3;
+  width: 31%;
+}
+
+.color-palette-3 {
+  background-color: #000000;
+  width: 31%;
+}
+
+.color-palette-1-FL,
+.color-palette-2-FL,
+.color-palette-3-FL {
+  border-radius: 22px;
+  height: 90%;
+}
+
+.color-palette-1-FL {
+  background-color: #1E1E1E;
+  width: 31%;
+}
+
+.color-palette-2-FL {
+  background-color: #8BB481;
+  width: 31%;
+}
+
+.color-palette-3-FL {
+  background-color: #FFFFFF;
+  width: 31%;
+}
+
+.project-bento-3 {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-bento-container {
+  width: 100%;
+  height: calc(50% - 5px);
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+.images-bento-container {
+  width: 100%;
+  height: calc(50% - 5px);
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid #5f5f5f7e;
+}
+
+.images-bento-container img {
+  height: 95%;
+  border-radius: 12px;
+}
+
+.video-bento-container video {
+  width: 95%;
+  border-radius: 22px;
+}
+
+#myVideo2 {
+  height: 96%;
+  object-fit: cover;
+  border-radius: 22px;
+
+}
+
+.logo-bento-container {
+  width: 100%;
+  height: calc(50% - 5px);
+  background-color: #303030;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #5f5f5f7e;
+}
+
+.logo-bento-heading {
+  font-family: "Sorts Mill Goudy", serif;
+  font-weight: 400;
+  font-size: 175px;
+  color: white;
+  margin: 0;
+}
+
+#technologies {
+  position: relative;
+  width: 80%;
+  max-width: 80%;
+  top: 110vh;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#section-title {
+  font-family: "Clash Display regular";
+  font-size: 40px;
+  color: white;
+  margin-bottom: 25px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-mask-image: linear-gradient(270deg, transparent, black, black, transparent);
+  mask-image: linear-gradient(270deg, transparent, black, black, transparent);
+}
+
+.carousel__slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  border: none;
+  height: 100px;
+  margin-top: 50px;
+}
+
+.carousel__list {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 27px;
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#carousel-img {
+  width: 100%;
+  height: 100%;
+  transition: ease-in-out 0.3s;
+}
+
+#carousel-img:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+  font-size: 30px;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block; /* Para asegurarse de que el tooltip aparezca correctamente */
+}
+
+.tooltip-container .tooltiptext {
+    visibility: hidden;
+    /* width: 80%; */
+    background-color: #3939397e;
+    backdrop-filter: blur(15px);
+    color: white;
+    text-align: center;
+    padding: 8%;
+    padding-left: 12%;
+    padding-right: 12%;
+    border-radius: 50px;
+    border: 2px solid #5f5f5f7e;
+
+    /* Posiciona el tooltip arriba de la imagen y en el centro horizontalmente */
+    position: absolute;
+    z-index: 999;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Clash Display regular";
+}
+
+.tooltip-container:hover .tooltiptext {
+    visibility: visible;
+}
+
+#contact {
+  position: relative;
+  width: 80%;
+  max-width: 80%;
+  top: 125vh;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#contact-content {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+#contact-email {
+  font-family: "Clash Display regular";
+  font-size: 32px;
+  background: -webkit-linear-gradient(45deg, rgba(83, 83, 83, 1) 0%, rgba(185, 185, 185, 1) 90%, rgb(255, 255, 255) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  margin-bottom: 75px;
+  margin-top: 50px;
+  font-weight: 600;
+  transition: ease-in-out 0.7s;
+  text-decoration: none;
+}
+
+#contact-email:hover {
+  background-position: right center;
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: ease-in-out 0.3s;
+  
+}
+
+#contact-socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 75px;
+  margin-top: 50px;
+  position: absolute;
+  right: 10%;
+}
+
+#contact-tile {
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 30px;
+  background-color: #524735;
+  border-radius: 50px;
+  border-color: #524735;
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  color: #97887a;
+  text-decoration: none;
+  font-family: 'clash display medium';
+  transition: ease-in-out 0.5s;
+}
+
+#contact-tile:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+  
+#contact-tile img {
+  height: 50%;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  /* Typography adjustments */
+  #title {
+    font-size: 48px; /* Scaled down for mobile readability */
+    padding: 0 10px; /* Padding to prevent edge clashing */
+    text-align: center; /* Center title for better focus */
+  }
+
+  #subtitle {
+    font-size: 16px; /* Adjust subtitle size for clarity */
+    text-align: center; /* Center aligning the subtitles */
+    padding: 0 15px; /* Padding for better text display */
+  }
+
+  /* Navbar adjustments */
+  #navbar {
+    padding: 0 3%; /* Smaller padding for larger clickable area */
+    height: auto; /* Auto height for accommodating smaller elements */
+    background-color: rgba(0, 0, 0, 0.85); /* Better visibility on scroll */
+  }
+
+  /* Logo adjustments for small screens */
+  .logo {
+    padding: 10px 0; /* Padding for touch targets */
+  }
+  
+  .logo h4 a {
+    font-size: 18px; /* Smaller font size for space management */
+  }
+
+  /* Structural adjustments */
+  .swipe-down-container {
+    width: 25%; /* Larger relative width for better visibility */
+    bottom: 10%; /* Increased spacing from the bottom */
+    padding: 5px; /* Padding for better touch responsiveness */
+  }
+  
+  /* Content container adjustments */
+  .title-container, .tile-container, .project-bento, .technologies-tiles {
+    padding: 0 5%; /* Uniform padding for consistent layout */
+    text-align: center; /* Center align for better focus */
+  }
+
+  /* Button and interactive elements */
+  #playPauseButton, #scroll-to-projects {
+    font-size: smaller; /* Smaller font for buttons and links */
+    padding: 8px; /* Larger padding for easy interaction */
+  }
+
+  /* Adjust Project Tiles and Technologies section for stacking */
+  .tile, .project-bento-1, .project-bento-2, .project-bento-3 {
+    width: 100%; /* Full width for better layout */
+    margin-bottom: 15px; /* Spacing between stacked items */
+  }
+
+  /* Contact and Footer Sections */
+  #contact-content, #contact-socials {
+    flex-direction: column; /* Stack contact info and socials vertically */
+    text-align: center; /* Center alignment for content */
+  }
+
+  #contact-tile {
+    margin: 10px auto; /* Center and space out contact tiles */
+  }
+  
+  /* Hide elements not necessary on mobile for clear focus */
+  .arrow-1, .arrow-2 {
+    display: none; /* Remove navigation arrows not usable on mobile */
+  }
+}
+
+/* Additional CSS for very small devices (up to 480px width) */
+@media (max-width: 480px) {
+  #title {
+    font-size: 40px; /* Further reduced font size */
+  }
+
+  #subtitle {
+    font-size: 14px; /* Further reduced subtitle size */
+  }
+
+  #navbar {
+    padding: 0 2%; /* Even smaller padding for maximum space utilization */
+  }
+
+  .logo h4 a {
+    font-size: 16px; /* Reduced further to fit small screens */
+  }
+
+  .swipe-down-container {
+    width: 30%; /* Increased visible area for interactive element */
+  }
+  
+  /* Adjust project details for very small screens */
+  .project-bento, .technologies-tiles, .carousel {
+    flex-direction: column; /* Ensure everything stacks vertically for narrow screens */
+    align-items: center;
+  }
+}

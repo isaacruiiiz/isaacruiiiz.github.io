@@ -1,0 +1,11 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="96" height="96" rx="15" fill="#0B0B0B" stroke="url(#paint0_diamond_249_4)" stroke-width="4"/>
+<path d="M35.25 76H24V25.75H35.25V76ZM60.1137 76.75C47.4387 76.75 40.4637 71.8 40.4637 63.1V62.875H51.7137V63.55C51.7137 66.925 53.8137 67.825 60.1887 67.825C66.1887 67.825 67.6137 66.85 67.6137 64.6C67.6137 62.5 66.4887 61.9 62.0637 61.3L51.4887 60.025C43.9887 59.2 39.7887 55.825 39.7887 49.525C39.7887 42.925 45.4137 37.675 58.3137 37.675C70.6137 37.675 77.5887 42.325 77.5887 51.475V51.7H66.3387V51.25C66.3387 48.175 64.8387 46.6 57.9387 46.6C52.3137 46.6 50.8887 47.575 50.8887 49.975C50.8887 51.925 51.9387 52.75 56.8887 53.35L64.9137 54.325C74.9637 55.45 78.7137 58.825 78.7137 65.05C78.7137 72.1 71.7387 76.75 60.1137 76.75Z" fill="white"/>
+<defs>
+<radialGradient id="paint0_diamond_249_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.5063 3.66973) rotate(51.1248) scale(110.331 113.783)">
+<stop offset="0.0570541" stop-color="#393939"/>
+<stop offset="0.488353" stop-color="white" stop-opacity="0.25"/>
+<stop offset="0.942873" stop-color="white" stop-opacity="0.24"/>
+</radialGradient>
+</defs>
+</svg>
