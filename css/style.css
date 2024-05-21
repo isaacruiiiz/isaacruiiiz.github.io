@@ -11,9 +11,9 @@
 }
 
 @font-face {
-  font-family: "Clash Display regular";
+  font-family: "Clash Display medium";
 
-  src: url(../webfontkit-20240404-115750/clashdisplay-regular-webfont.woff);
+  src: url(../webfontkit-20240404-115750/clashdisplay-medium-webfont.woff);
 }
 
 @font-face {
@@ -71,7 +71,7 @@
 
 .logo h4 a {
   text-decoration: none;
-  font-family: Clash Display regular;
+  font-family: "Clash Display medium";
   font-size: 24px;
   color: white;
 }
@@ -543,7 +543,7 @@ hr {
 }
 
 #section-title {
-  font-family: "Clash Display regular";
+  font-family: "Clash Display medium";
   font-size: 40px;
   color: white;
   margin-bottom: 25px;
@@ -634,7 +634,7 @@ ul {
     top: -45px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Clash Display regular";
+    font-family: "Clash Display medium";
 }
 
 .tooltip-container:hover .tooltiptext {
@@ -657,7 +657,7 @@ ul {
 }
 
 #contact-email {
-  font-family: "Clash Display regular";
+  font-family: "Clash Display medium";
   font-size: 32px;
   background: -webkit-linear-gradient(45deg, rgba(83, 83, 83, 1) 0%, rgba(185, 185, 185, 1) 90%, rgb(255, 255, 255) 100%);
   background-size: 200% auto;
