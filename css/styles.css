@@ -1,3 +1,65 @@
 html {
-    background-color: black;
+    background: black;
+}
+
+#mainTitle{
+    font-family: "Inter", sans-serif;
+    color: #E6E6E6;
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 1200px; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: block;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+.arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    transform: rotate(90deg);
+}
+
+.arrow-icon svg {
+    width: 30px;
+    height: 30px;
+    color: #8AA8DF;
+    transition: 0.5s ease-in-out;
+}
+
+.arrow-icon:hover svg {
+    filter: blur(2px);
+    cursor: pointer;
+}
+
+#mainTitle h1 {
+    font-size: clamp(2rem, 12vw, 4rem);
+    font-weight: 500;
+}
+
+#mainTitle-cta {
+    color: #8AA8DF;
+}
+
+#mainTitle-light {
+    font-weight: 300;
+    color: #A9A9A9;
+}
+
+/* Evitar que el contenedor del título lo oculte */
+header {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* Asegurar que el body permite el ajuste */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
