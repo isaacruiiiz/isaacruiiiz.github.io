@@ -154,3 +154,19 @@ body {
     scroll-snap-align: start;
     width: 300px;
 }
+
+#contact {
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact a {
+    font-family: Inter;
+    color: #A9A9A9;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
