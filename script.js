@@ -6,3 +6,12 @@ document.querySelector(".arrow-icon").addEventListener("click", function() {
         arrow.style.filter = "blur(0px)";
     }, 500);
 });
+
+document.querySelector("#get-in-touch-button").addEventListener("click", function() {
+    let buttonText = this.querySelector("a");
+    buttonText.style.filter = "blur(2px)";
+
+    setTimeout(() => {
+        buttonText.style.filter = "blur(0px)";
+    }, 500);
+});

@@ -6,7 +6,7 @@ html {
     font-family: "Inter", sans-serif;
     color: #E6E6E6;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.12;
     max-width: 1200px; 
     word-wrap: break-word; 
     overflow-wrap: break-word;
@@ -35,8 +35,9 @@ html {
 }
 
 #mainTitle h1 {
-    font-size: clamp(2rem, 12vw, 4rem);
+    font-size: clamp(1.5rem, 12vw, 4rem);
     font-weight: 500;
+    margin-top: auto;
 }
 
 #mainTitle-cta {
@@ -48,7 +49,6 @@ html {
     color: #A9A9A9;
 }
 
-/* Evitar que el contenedor del título lo oculte */
 header {
     max-width: 100%;
     padding: 20px;
@@ -57,9 +57,100 @@ header {
     align-items: start;
 }
 
-/* Asegurar que el body permite el ajuste */
 body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+#get-in-touch-button {
+    bottom: 20px;
+    right: 20px;
+    width: 183px;
+    height: 63px;
+    background-color: rgba(0, 0, 0, 0.66);
+    border: 2px solid rgba(180, 180, 180, 0.33);
+    border-radius: 50px;
+    position: fixed;
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#get-in-touch-button:hover {
+    cursor: pointer;
+}
+
+#get-in-touch-button a {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    color: #E6E6E6;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: filter 0.5s ease-in-out;
+}
+
+#get-in-touch-button:hover a,
+#get-in-touch-button:active a {
+    filter: blur(2px);
+}
+
+.projects-heading {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: clamp(4vw, 10vw, 4rem);
+    max-width: 100%;
+    color: #E6E6E6;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 0;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
+
+.know-more-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.75rem, 4vw, 4rem);
+    max-width: 1200px; 
+    margin: 0;
+    padding: 20px;
+    padding-top: 5px;
+}
+
+.know-more-text a {
+    color: #A9A9A9;
+    text-decoration: underline;
+}
+
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 20px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.foodlink-mockup-img {
+    scroll-snap-align: start;
+    width: 200px;
+}
+
+.ftm-mockup-img {
+    scroll-snap-align: start;
+    width: 300px;
 }
