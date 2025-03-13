@@ -16,6 +16,25 @@ html {
     gap: 8px;
 }
 
+@media (min-width: 1200px) {
+    #mainTitle {
+        font-family: "Inter", sans-serif;
+        color: #E6E6E6;
+        font-weight: 500;
+        line-height: 1.12;
+        max-width: 1200px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-top: 15%;
+        gap: 8px;
+    }
+}
+
 .arrow-icon {
     display: inline-flex;
     align-items: center;
@@ -35,7 +54,7 @@ html {
 }
 
 #mainTitle h1 {
-    font-size: clamp(1.5rem, 12vw, 4rem);
+    font-size: clamp(1.5rem, 12vw, 50px);
     font-weight: 500;
     margin-top: auto;
 }
@@ -53,7 +72,6 @@ header {
     max-width: 100%;
     padding: 20px;
     display: flex;
-    flex-direction: column;
     align-items: start;
 }
 
@@ -63,20 +81,32 @@ body {
     padding: 0;
 }
 
+#projects {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 #get-in-touch-button {
-    bottom: 20px;
-    right: 20px;
     width: 183px;
     height: 63px;
     background-color: rgba(0, 0, 0, 0.66);
     border: 2px solid rgba(180, 180, 180, 0.33);
     border-radius: 50px;
     position: fixed;
+    bottom: 20px;
+    right: max(calc((100% - 1200px) / 2));
     backdrop-filter: blur(12px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 1200px) {
+    #get-in-touch-button {
+        right: 20px;
+    }
+}
+
 
 #get-in-touch-button:hover {
     cursor: pointer;
@@ -102,7 +132,7 @@ body {
 .projects-heading {
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    font-size: clamp(4vw, 10vw, 4rem);
+    font-size: clamp(1.5rem, 10vw, 42px);
     max-width: 100%;
     color: #E6E6E6;
     margin: 0;
@@ -116,7 +146,7 @@ body {
 .know-more-text {
     font-family: "Inter", sans-serif;
     font-weight: 300;
-    font-size: clamp(0.75rem, 4vw, 4rem);
+    font-size: clamp(0.75rem, 4vw, 16px);
     max-width: 1200px; 
     margin: 0;
     padding: 20px;
@@ -156,6 +186,8 @@ body {
 }
 
 #contact {
+    margin: 0 auto;
+    max-width: 1200px;
     margin-top: 100px;
     padding: 20px;
     display: flex;
@@ -165,7 +197,7 @@ body {
 
 #contact a {
     font-family: Inter;
-    color: #A9A9A9;
+    color: #8AA8DF;
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;

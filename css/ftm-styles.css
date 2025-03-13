@@ -43,7 +43,8 @@ body {
     width: var(--size);
     height: var(--size);
     filter: blur(calc(var(--size) / 5));
-    background-image: linear-gradient(to right, rgba(139, 180, 129, 1), rgb(123, 236, 94));
+    /* background-image: linear-gradient(to right, rgb(84, 23, 99), rgb(37, 22, 172), rgb(22, 142, 172)); */
+    background-image:repeating-linear-gradient(45deg, rgb(124, 19, 107), rgb(69, 23, 128), rgb(49, 200, 238));
     animation: fluid-move var(--speed) ease-in-out infinite alternate;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
