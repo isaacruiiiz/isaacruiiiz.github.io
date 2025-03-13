@@ -160,6 +160,7 @@ body {
 
 .carousel {
     display: grid;
+    place-content: flex-start;
     grid-auto-flow: column;
     scroll-behavior: auto;
     gap: 20px;
@@ -170,6 +171,15 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.carousel.active {
+    cursor: grabbing; /* Cambia el cursor cuando está en modo arrastre */
+    user-select: none; /* Evita selección accidental de texto */
+}
+.carousel {
+    cursor: grab; /* Indica que el usuario puede arrastrar */
+}
+
 
 .carousel::-webkit-scrollbar {
     display: none;
