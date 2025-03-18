@@ -27,4 +27,3 @@ document.querySelector(".arrow-icon").addEventListener("click", function() {
 
     requestAnimationFrame(smoothScroll);
 });
-

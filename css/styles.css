@@ -104,6 +104,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 @media (max-width: 1200px) {
@@ -173,6 +174,7 @@ body {
     scrollbar-color: #A9A9A9 transparent;
     margin-left: 20px;
     margin-right: 20px;
+    mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
 }
 
 
