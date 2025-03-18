@@ -1,3 +1,8 @@
+::selection {
+    background: #8AA8DF;
+    color: #E6E6E6;
+}
+
 html {
     background: black;
 }
@@ -107,7 +112,6 @@ body {
     }
 }
 
-
 #get-in-touch-button:hover {
     cursor: pointer;
 }
@@ -124,8 +128,7 @@ body {
     transition: filter 0.5s ease-in-out;
 }
 
-#get-in-touch-button:hover a,
-#get-in-touch-button:active a {
+#get-in-touch-button:hover a {
     filter: blur(2px);
 }
 
@@ -162,27 +165,21 @@ body {
     display: grid;
     place-content: flex-start;
     grid-auto-flow: column;
-    scroll-behavior: auto;
     gap: 20px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    scrollbar-width: thin; 
+    scrollbar-color: #A9A9A9 transparent;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.carousel.active {
-    cursor: grabbing; /* Cambia el cursor cuando está en modo arrastre */
-    user-select: none; /* Evita selección accidental de texto */
-}
-.carousel {
-    cursor: grab; /* Indica que el usuario puede arrastrar */
-}
 
-
-.carousel::-webkit-scrollbar {
-    display: none;
+@media (min-width: 1200px) {
+    .carousel {
+        overflow-x: scroll; 
+    }
 }
 
 .foodlink-mockup-img {
@@ -190,13 +187,13 @@ body {
     width: 200px;
 }
 
-.ftm-mockup-img {
+.desktop-mockup-img {
     scroll-snap-align: start;
     width: 300px;
 }
 
 @media (min-width: 1200px) {
-    .ftm-mockup-img {
+    .desktop-mockup-img {
         width: 450px;
     }
 }
