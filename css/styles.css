@@ -227,14 +227,14 @@ body {
     }
 }
 
-.ux-bites-mockup-img {
+.phone-mockup-img {
     scroll-snap-align: start;
     width: 400px;
     border-radius: 25px;
 }
 
 @media (max-width: 1200px) {
-    .ux-bites-mockup-img {
+    .phone-mockup-img {
         width: 300px;
     }
     
