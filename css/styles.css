@@ -233,6 +233,13 @@ body {
     border-radius: 25px;
 }
 
+@media (max-width: 1200px) {
+    .ux-bites-mockup-img {
+        width: 300px;
+    }
+    
+}
+
 #contact {
     margin: 0 auto;
     max-width: 1200px;
