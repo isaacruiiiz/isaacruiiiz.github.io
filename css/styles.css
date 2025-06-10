@@ -160,6 +160,33 @@ body {
 .know-more-text a {
     color: #A9A9A9;
     text-decoration: underline;
+    transition: 0.5s ease-in-out;;
+}
+
+.know-more-text a:hover {
+    color: #8AA8DF;
+}
+
+.ux-bites-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #8AA8DF 2px solid;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    max-width: 75px;
+    max-height: 20px;
+    border-radius: 50px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.75rem, 4vw, 16px);
+    color: #8AA8DF;
+}
+
+.ux-bites-container:hover {
+    user-select: none;
 }
 
 .carousel {
@@ -174,7 +201,7 @@ body {
     scrollbar-color: #A9A9A9 transparent;
     margin-left: 20px;
     margin-right: 20px;
-    mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 0px, black calc(100% - 10px), transparent);
 }
 
 
@@ -184,7 +211,7 @@ body {
     }
 }
 
-.foodlink-mockup-img {
+.mobile-mockup-img {
     scroll-snap-align: start;
     width: 200px;
 }
@@ -198,6 +225,12 @@ body {
     .desktop-mockup-img {
         width: 450px;
     }
+}
+
+.ux-bites-mockup-img {
+    scroll-snap-align: start;
+    width: 400px;
+    border-radius: 25px;
 }
 
 #contact {
@@ -216,4 +249,9 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact a:hover {
+    text-decoration: underline;
 }
