@@ -227,14 +227,14 @@ body {
     }
 }
 
-.phone-mockup-img {
+.mockup-img {
     scroll-snap-align: start;
     width: 400px;
     border-radius: 25px;
 }
 
 @media (max-width: 1200px) {
-    .phone-mockup-img {
+    .mockup-img {
         width: 300px;
     }
     
