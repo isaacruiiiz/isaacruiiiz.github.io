@@ -31,29 +31,69 @@ img {
     padding: 40px 20px; /* 20px de margen lateral en móvil */
 }
 
+.project-header {
+    margin-bottom: 60px;
+    margin-top: 15%;
+}
+
 /* ==========================================================================
    Navegación (Back Button)
    ========================================================================== */
 .top-nav {
     margin-bottom: 60px;
+    width: 183px;
+    height: 63px;
+    background-color: rgba(0, 0, 0, 0.66);
+    border: 2px solid rgba(180, 180, 180, 0.33);
+    border-radius: 50px;
+    position: fixed;
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
 .back-btn {
-    display: inline-block;
-    color: #E6E6E6;
-    text-decoration: none;
-    font-size: 14px;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
-    padding: 10px 24px;
-    border: 1px solid rgba(180, 180, 180, 0.33);
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
+    font-size: 1.35em;
+    color: #E6E6E6;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: filter 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
-.back-btn:hover {
+.arrow-icon-top-nav {
+    display: inline-flex;
+    align-items: center;
+    transform: rotate(270deg);
+}
+
+.arrow-icon-top-nav svg {
+    width: 24px;
+    height: 24px;
+    color: #E6E6E6;
+    transition: 0.5s ease-in-out;
+}
+
+.arrow-icon-top-nav:hover svg {
+    filter: blur(2px);
+    cursor: pointer;
+}
+
+/* .back-btn:hover {
     background-color: rgba(138, 168, 223, 0.1);
     border-color: #8AA8DF;
     color: #8AA8DF;
+} */
+
+.top-nav:hover a {
+    filter: blur(2px);
 }
 
 /* ==========================================================================
@@ -61,7 +101,7 @@ img {
    ========================================================================== */
 .project-header h1 {
     font-size: clamp(2.5rem, 6vw, 64px); /* Responsive como tu index */
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 0 10px 0;
     line-height: 1.1;
 }
@@ -69,7 +109,7 @@ img {
 .project-header .subtitle {
     color: #A9A9A9;
     font-size: clamp(1.1rem, 2vw, 24px);
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -122,7 +162,7 @@ img {
 }
 
 @media (min-width: 768px) {
-    .image-grid.3-cols {
+    .image-grid-3-cols {
         grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet/desktop */
     }
 }
