@@ -27,3 +27,53 @@ document.querySelector(".arrow-icon").addEventListener("click", function() {
 
     requestAnimationFrame(smoothScroll);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel");
+
+    carousels.forEach(carousel => {
+        // 1. Crear un "envoltorio" dinámicamente para no tocar tu HTML
+        const wrapper = document.createElement("div");
+        wrapper.className = "carousel-wrapper";
+        
+        // Insertar el envoltorio y meter el carrusel dentro
+        carousel.parentNode.insertBefore(wrapper, carousel);
+        wrapper.appendChild(carousel);
+
+        // 2. Lógica para animar la opacidad suavemente
+        const updateGradients = () => {
+            const scrollLeft = Math.round(carousel.scrollLeft);
+            const maxScrollLeft = Math.round(carousel.scrollWidth - carousel.clientWidth);
+
+            // Si no hay scroll (ej. pantalla grande), quitamos todo
+            if (maxScrollLeft <= 0) {
+                wrapper.classList.add("no-mask");
+                return;
+            } else {
+                wrapper.classList.remove("no-mask");
+            }
+
+            // Al inicio
+            if (scrollLeft <= 5) {
+                wrapper.classList.remove("is-scrolled", "is-end");
+            } 
+            // Al final
+            else if (scrollLeft >= maxScrollLeft - 5) {
+                wrapper.classList.add("is-scrolled", "is-end");
+            } 
+            // En el medio
+            else {
+                wrapper.classList.add("is-scrolled");
+                wrapper.classList.remove("is-end");
+            }
+        };
+
+        // Escuchar eventos
+        carousel.addEventListener("scroll", updateGradients);
+        
+        // Ejecutar los cálculos
+        updateGradients();
+        window.addEventListener("load", updateGradients);
+        window.addEventListener("resize", updateGradients);
+    });
+});

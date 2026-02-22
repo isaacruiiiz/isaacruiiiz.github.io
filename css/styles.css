@@ -189,6 +189,7 @@ body {
     user-select: none;
 }
 
+/* Limpiamos la máscara del carousel pero mantenemos su estructura */
 .carousel {
     display: grid;
     place-content: flex-start;
@@ -201,7 +202,59 @@ body {
     scrollbar-color: #A9A9A9 transparent;
     margin-left: 20px;
     margin-right: 20px;
-    mask-image: linear-gradient(to right, transparent, black 0px, black calc(100% - 10px), transparent);
+    /* BORRA las propiedades mask-image y transition que tenías aquí */
+}
+
+/* ---------------------------------------------------
+   NUEVO: Sombras suaves para los carruseles 
+   --------------------------------------------------- */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Creamos las dos sombras (izquierda y derecha) */
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 8px; /* Deja libre la scrollbar por si aparece */
+    width: 80px; /* Ancho del difuminado */
+    pointer-events: none; /* Permite hacer clic en las imágenes a través de la sombra */
+    z-index: 10;
+    transition: opacity 0.4s ease-in-out; /* ESTO HACE LA MAGIA SUAVE */
+    height: 100%;
+}
+
+/* Sombra Izquierda (Oculta al inicio) */
+.carousel-wrapper::before {
+    left: 20px; /* Coincide con el margin del carousel */
+    background: linear-gradient(to right, black 0%, transparent 100%);
+    opacity: 0; 
+}
+
+/* Sombra Derecha (Visible al inicio) */
+.carousel-wrapper::after {
+    right: 20px; /* Coincide con el margin del carousel */
+    background: linear-gradient(to left, black 0%, transparent 100%);
+    opacity: 1; 
+}
+
+/* ESTADO 2: Al empezar a mover (Aparece suavemente la izquierda) */
+.carousel-wrapper.is-scrolled::before {
+    opacity: 1;
+}
+
+/* ESTADO 3: Al llegar al final (Desaparece suavemente la derecha) */
+.carousel-wrapper.is-end::after {
+    opacity: 0;
+}
+
+/* ESTADO SEGURIDAD: Si todo el carrusel cabe en pantalla, no hay sombras */
+.carousel-wrapper.no-mask::before,
+.carousel-wrapper.no-mask::after {
+    opacity: 0 !important;
 }
 
 
