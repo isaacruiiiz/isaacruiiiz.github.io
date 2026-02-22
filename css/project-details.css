@@ -18,7 +18,6 @@ body {
 img, video{
     max-width: 100%;
     height: auto;
-    border-radius: 16px; /* Borde suave para los mockups */
     display: block;
 }
 
@@ -117,7 +116,7 @@ img, video{
 .project-info-text {
     color: #A9A9A9;
     font-size: 1.15rem;
-    line-height: 1.6;
+    line-height: 1.2;
     font-weight: 300;
     margin: 0;
 }
@@ -132,59 +131,129 @@ img, video{
 }
 
 .project-section h2 {
-    font-size: clamp(2rem, 4vw, 48px);
+    font-size: clamp(2rem, 4vw, 52px);
     font-weight: 500;
-    margin: 0 0 24px 0;
+    margin: 0;
 }
 
-.text-content p {
+.text-content p, .text-content li, .text-content ul {
     color: #A9A9A9;
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.2;
     margin-bottom: 20px;
     font-weight: 300;
 }
 
-.text-content.full-width {
-    max-width: 900px; /* Para que los textos largos no sean ilegibles de borde a borde */
+.text-content li {
+    margin-bottom: 0;
 }
+
+.text-content p b, .img-caption {
+    font-weight: 600;
+    color: #A9A9A9;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+/* .text-content.full-width {
+    max-width: 900px; 
+} */
 
 /* ==========================================================================
    Estructuras Responsive (Grid / Flexbox)
    ========================================================================== */
 
-/* Split Layout (Texto a un lado, imagen al otro) */
-.split-layout {
+   .split-layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* En móvil, 100% de ancho, una cosa debajo de otra */
     gap: 40px;
 }
 
 @media (min-width: 900px) {
     .split-layout {
-        grid-template-columns: 1fr 0.3fr; 
+        /* Exactamente 70% para la primera columna (texto) y 30% para la segunda (imágenes) */
+        grid-template-columns: 7fr 3fr; 
         gap: 60px;
+        align-items: center; /* Mantiene el contenido centrado verticalmente */
     }
 }
 
 .media-content {
     display: flex;
+    flex-direction: row; /* Pone las dos imágenes una encima de la otra */
+    gap: 30px; /* Separación entre la primera imagen y la segunda */
     justify-content: center;
+    width: 100%; /* Asegura que las imágenes respeten su 30% y no desborden */
+}
+
+@media screen and (max-width: 900px) {
+    .media-content {
+        gap: 0px;
+    }
+    
+}
+
+.media-content img {
+    max-width: 50%;
 }
 
 /* Image Grids (Para Wireframes, testing, etc) */
 .image-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px; /* Separación en móvil */
+    gap: 10px; /* Separación en móvil */
     margin-top: 30px;
 }
 
+.sketch-images-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+    .sketch-images-container {
+        gap: 5px;
+    }
+    
+}
+
+.sketch-images-container-final-result-images {
+    display: grid;
+    /* Crea exactamente 4 columnas del mismo tamaño (1 fraction cada una) */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; /* El espacio entre los mockups */
+    width: 100%; /* Ocupa el 100% de la caja padre */
+    align-items: start;
+}
+
+.sketch-images-container-final-result-images img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Evita que las imágenes se deformen */
+}
+
+/* 📱 BONUS RESPONSIVE: En móviles, 4 columnas se verían minúsculas. 
+   Es mejor que en pantallas pequeñas sean 2 columnas y pase a 4 en ordenador */
+@media (max-width: 768px) {
+    .sketch-images-container-final-result-images {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        gap: 15px;
+    }
+}
+
+.sketch-images-container img {
+    flex: 1;           /* Obliga a las imágenes a repartirse el espacio a partes iguales */
+    min-width: 0;      /* Truco clave de Flexbox: evita que el tamaño original rompa el grid */
+    width: 100%;       /* Hace que ocupen el espacio asignado por el flex */
+    object-fit: contain; /* Asegura que la imagen no se deforme (puedes cambiarlo a 'contain' si prefieres que no recorte nada) */
+}
+
 @media (min-width: 768px) {
-    .image-grid.three-cols {
-        /* Limitamos cada imagen a unos 280px de ancho máximo como pediste */
-        grid-template-columns: repeat(3, minmax(0, 280px)); 
-        justify-content: start; /* Lo alineamos a la izquierda del contenedor */
+    .image-grid {
+        justify-content: start; 
         gap: 60px; 
     }
 }
@@ -203,13 +272,7 @@ img, video{
 .grid-item {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-.img-caption {
-    color: #8AA8DF; /* Color de acento para los subtítulos */
-    font-size: 1rem;
-    font-weight: 500;
+    gap: 5px;
 }
 
 /* ==========================================================================
@@ -222,4 +285,26 @@ img, video{
     text-align: center;
     color: #A9A9A9;
     font-size: 0.9rem;
+}
+
+#contact {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact a {
+    font-family: Inter;
+    color: #8AA8DF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact a:hover {
+    text-decoration: underline;
 }

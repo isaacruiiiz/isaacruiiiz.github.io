@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,17 @@
     <link rel="stylesheet" href="css/project-details.css">
     <title>FoodLink UX Study | Isaac Ruiz-Calero</title>
 </head>
+
 <body>
 
     <div class="project-container">
-        
+
         <button class="top-nav">
             <a href="index.html" class="back-btn">
                 <span class="arrow-icon-top-nav">
                     <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244l144-144l144 144M256 120v292"/>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="48" d="m112 244l144-144l144 144M256 120v292" />
                     </svg>
                 </span>
                 Go Back</a>
@@ -39,83 +42,136 @@
         <section class="project-section split-layout">
             <div class="text-content">
                 <h2>Overview</h2>
-                <p>How might we connect food waste with hunger relief? Developed as an academic project, FoodLink is a dual-sided platform serving two key users: Restaurants with surplus food and Volunteer Riders. <br>
-                    Restaurants publish available food packs in real-time, while volunteers use an interactive map to locate both the food and the recipients. The standout feature allows the community to pin the locations of homeless individuals, creating a live, crowdsourced database to guide deliveries effectively.</p>
+                <p>How might we connect food waste with hunger relief? Developed as an academic project, FoodLink is a
+                    dual-sided platform serving two key users: Restaurants with surplus food and Volunteer Riders. <br>
+                    Restaurants publish available food packs in real-time, while volunteers use an interactive map to
+                    locate both the food and the recipients. The standout feature allows the community to pin the
+                    locations of homeless individuals, creating a live, crowdsourced database to guide deliveries
+                    effectively.</p>
             </div>
             <div class="media-content">
-                <img src="img/foodlink-project/mockup-no-background.png" alt="FoodLink Overview Mockups"> 
+                <img src="img/foodlink-project/439_1x_shots_so 1.png" alt="FoodLink Overview Mockups">
+                <img src="img/foodlink-project/629_1x_shots_so 1.png" alt="FoodLink Overview Mockups">
             </div>
         </section>
 
         <section class="project-section">
             <div class="text-content full-width">
                 <h2>The Problem</h2>
-                <p><strong>The Visibility Challenge:</strong> Traditional food banks require recipients to travel to a specific location, which isn't always possible for everyone living on the streets. On the other side, citizens who want to help often lack two things: access to prepared food to give away, and knowledge of where people in need are currently located. This lack of real-time data results in food waste coexisting with hunger in the same neighborhood.</p>
+                <p><b>The Disconnect: </b>While local restaurants often face the challenge of managing surplus food,
+                    homeless individuals struggle to access daily meals due to mobility issues or lack of
+                    information.<br><br> <b>The Gap:</b> There is currently no streamlined, real-time channel that
+                    connects this surplus with the volunteers willing to deliver it. Furthermore, the transient nature
+                    of homelessness makes it difficult for volunteers to know exactly where to deliver aid efficiently.
+                </p>
             </div>
         </section>
 
         <section class="project-section">
             <div class="text-content full-width">
-                <h2>User Research (Personas, Interviews)</h2>
-                <p>Since FoodLink operates as a two-sided marketplace, we began the project by developing distinct personas to address the unique motivations and pain points of our two primary user groups. We conducted a cross-functional usability testing session involving peers from both Web Development (DAW) and Marketing courses. Feedback from the marketing cohort indicated that the UI needed a more emotional connection, which led us to introduce a friendly brand mascot to humanize the interface.</p>
+                <h2>User Research</h2>
+
+                <p><b>01. Defining the Dual Experience (Personas)</b><br>
+                    Since FoodLink operates as a two-sided marketplace, we began the project by developing distinct
+                    personas to address the unique motivations and pain points of our two primary user groups:</p>
+                <ul>
+                    <li>The "Solidarity Rider" (Volunteer): Driven by altruism but limited by time. Their primary need
+                        was an intuitive map interface to locate recipients quickly without friction.</li>
+                    <li>The "Partner Restaurant" (Donor): Focused on operational efficiency. They needed a seamless flow
+                        to publish surplus food packs in seconds during busy service hours.</li>
+                </ul>
+
+                <br>
+
+                <p><b>02. Cross-Functional Usability Testing</b><br>
+                    To validate our assumptions, we conducted a comprehensive peer-review session involving students
+                    from both Web Development (DAW) and Marketing courses.</p>
+                <ul>
+                    <li>Methodology: We utilized a "round-robin" testing strategy where groups exchanged prototypes to
+                        perform core tasks (e.g., "Publish a pack" or "Locate a recipient").</li>
+                    <li>The Value: While development peers focused on functionality and bugs, the marketing students
+                        provided a critical layer of feedback regarding desirability and brand perception, simulating a
+                        real-world stakeholder environment.</li>
+                </ul>
+
+                <br>
+
+                <p><b>03. The Key Iteration: Emotional Design</b><br>
+                    The most impactful insight came from the marketing cohort. Feedback indicated that while the app was
+                    functional, the UI felt too "transactional" and cold for a platform based on charity and human
+                    connection.</p>
+
+                <p><b>The Solution: </b>We iterated on the UI to introduce Emotional Design elements. We created a
+                    friendly brand mascot to guide users through the experience. This wasn't just an aesthetic choice;
+                    the mascot served to:</p>
+                <ol>
+                    <li>Humanize the interface: Making the act of helping feel warmer and more rewarding.</li>
+                    <li>Reduce cognitive load: Acting as a visual guide during the onboarding and delivery confirmation
+                        steps.</li>
+                </ol>
             </div>
         </section>
 
         <section class="project-section">
             <h2>Wireframing & Prototyping</h2>
-            <div class="image-grid three-cols">
+            <div class="image-grid">
                 <div class="grid-item">
-                    <span class="img-caption">Sketches</span>
-                    <img src="img/foodlink-project/261shots_so.png" alt="Sketches">
+                    <p class="img-caption">Initial Sketches</p>
+                    <div class="sketch-images-container">
+                        <img src="img/foodlink-project/Screenshot 2026-02-18 at 17.26.47 1.png" alt="Sketches">
+                        <img src="img/foodlink-project/image 3.png" alt="Sketches">
+                        <img src="img/foodlink-project/image 2.png" alt="Sketches">
+                    </div>
                 </div>
                 <div class="grid-item">
-                    <span class="img-caption">Low-Fi wireframes</span>
-                    <img src="img/foodlink-project/396shots_so.png" alt="Low-Fi Wireframes">
+                    <p class="img-caption">Wireframes</p>
+                    <div class="sketch-images-container">
+                        <img src="img/foodlink-project/imagen 1.png" alt="Wireframes">
+                        <img src="img/foodlink-project/imagen 2.png" alt="Wireframes">
+                        <img src="img/foodlink-project/imagen 3.png" alt="Wireframes">
+                        <img src="img/foodlink-project/imagen 5.png" alt="Wireframes">
+                    </div>
                 </div>
                 <div class="grid-item">
-                    <span class="img-caption">Interactive Flows</span>
-                    <img src="img/foodlink-project/767shots_so.png" alt="Interactive Flows">
+                    <p class="img-caption">Prototype</p>
+                    <img src="img/foodlink-project/imagen 6.png" alt="Prototype" style="width: 50%;">
                 </div>
             </div>
         </section>
 
         <section class="project-section">
-            <h2>User Testing & Iteration</h2>
-            <div class="image-grid three-cols">
+            <h2>Final Result</h2>
+            <div class="text-content full-width">
+                <p>As a joint design and development project, the final deliverable was a
+                    fully functional web app. Seeing the crowdsourced map operate in a live environment validated our
+                    initial UX research.<br>
+                <ul>
+                    <li>High-Fidelity Mockups: Final UI polished for both the Restaurant and Rider flows.</li>
+                    <li>Live Demo Recordings: Footage from our final academic presentation, showing the fully coded
+                        prototype successfully connecting a food surplus publication with a live pin drop on the map.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="image-grid">
                 <div class="grid-item">
-                    <span class="img-caption">Feedback Phase 1</span>
-                    <img src="img/foodlink-project/550shots_so.png" alt="Feedback">
-                </div>
-                <div class="grid-item">
-                    <span class="img-caption">Feedback Phase 2</span>
-                    <img src="img/foodlink-project/624shots_so.png" alt="Feedback">
-                </div>
-                <div class="grid-item">
-                    <span class="img-caption">Implemented Changes</span>
-                    <img src="img/foodlink-project/738shots_so.png" alt="Changes">
+                    <div class="sketch-images-container-final-result-images">
+                        <img src="img/foodlink-project/261shots_so.png" alt="Wireframes">
+                        <img src="img/foodlink-project/396shots_so.png" alt="Wireframes">
+                        <img src="img/foodlink-project/738shots_so.png" alt="Wireframes">
+                        <img src="img/foodlink-project/898shots_so.png" alt="Wireframes">
+                        <img src="img/foodlink-project/939shots_so.png" alt="Wireframes">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="project-section">
-            <h2>Final Design Solution</h2>
-            <div class="image-grid final-solution-grid">
-                <div class="grid-item">
-                    <img src="img/foodlink-project/810shots_so.png" alt="Final UI">
-                </div>
-                <div class="grid-item">
-                    <img src="img/foodlink-project/898shots_so.png" alt="Final UI">
-                </div>
-                <div class="grid-item video-item">
-                    <video src="img/foodlink-project/foodlink_video.mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
-        </section>
-
-        <footer class="project-footer">
-            <p>© Isaac Ruiz-Calero - UX/UI Designer & Developer</p>
+        <footer id="contact">
+            <a href="mailto:isaacruiiiz04@gmail.com" target="_blank">Email</a>
+            <a href="https://www.linkedin.com/in/isaac-ruiz-calero-00a990294/" target="_blank">Linkedin</a>
+            <a href="https://instagram.com/sameuxdesigns" target="_blank">Instagram</a>
         </footer>
     </div>
 
 </body>
+
 </html>
