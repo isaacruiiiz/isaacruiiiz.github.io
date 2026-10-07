@@ -1,11 +1,22 @@
-document.querySelector(".arrow-icon").addEventListener("click", function() {
-    const projectsSection = document.getElementById("projects");
-    const offset = 50; // Espacio desde la parte superior
-    const targetPosition = projectsSection.offsetTop - offset;
+// Todos los enlaces internos (#projects, #contact, #mainTitle) se desplazan con la misma animación
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+
+    const offset = 100; // Espacio desde la parte superior (barra superior fija)
+    const targetPosition = Math.max(target.offsetTop - offset, 0);
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
     const duration = 1000; // Duración en milisegundos (2s para una animación más lenta)
     let startTime = null;
+
+    // Con "Reducir movimiento" activado en el sistema, salta directamente
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        window.scrollTo(0, targetPosition);
+        return;
+    }
 
     // Función de interpolación ease-in-out
     function easeInOutQuad(t) {
@@ -26,6 +37,7 @@ document.querySelector(".arrow-icon").addEventListener("click", function() {
     }
 
     requestAnimationFrame(smoothScroll);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
