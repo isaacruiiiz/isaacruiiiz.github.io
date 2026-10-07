@@ -9,31 +9,46 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
     <title>Isaac Ruiz-Calero | UX Designer</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <nav id="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="#mainTitle">Isaac Ruiz-Calero</a>
+            <div class="nav-actions">
+                <a class="nav-link" href="#projects">Work</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="glass-button" href="mailto:isaacruiiiz04@gmail.com" target="_blank">
+                    <span class="glass-button-text">Get in touch!</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <header id="mainTitle">
         <h1>Hey, I'm Isaac! A <span id="mainTitle-cta">UX Designer</span> and front-end developer based in Barcelona.
         <span id="mainTitle-light">I love crafting seamless digital experiences and bringing them to life with code.</span>
-        Let's explore my work!
-        <span class="arrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-                <path fill="none" stroke="#8AA8DF" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244l144-144l144 144M256 120v292"/>
-            </svg>
-        </span>
-        </h1>
+        Let's explore my <span class="nowrap">work! <a class="arrow-icon" href="#projects" aria-label="Scroll to my work"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="#8AA8DF" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244l144-144l144 144M256 120v292"/></svg></a></span></h1>
     </header>
 
-    <button id="get-in-touch-button">
-        <a href="mailto:isaacruiiiz04@gmail.com" target="_blank">Get in touch!</a>
-    </button>
-    
-    <main id="projects">      
+    <main id="projects">
+        <div class="work-heading">
+            <h2 class="section-title">Selected work</h2>
+            <span class="work-count">6 projects</span>
+        </div>
+
         <section>
-            <div class="projects-heading">DishCover</div>
-            <p class="know-more-text"><a href="dishcover-project.html">know more</a></p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">DishCover</h2>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">4 screens</span>
+                    <a class="know-more" href="dishcover-project.html">Know more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
             <div class="carousel">
                 <img class="mockup-img" src="img/dishcover-project/DishCover Home Mockup.png" alt="Preview of DishCover mobile application">
                 <img class="mockup-img" src="img/dishcover-project/DishCover Category Screen.png" alt="Preview of DishCover mobile application">
@@ -41,19 +56,33 @@
                 <img class="mockup-img" src="img/dishcover-project/DishCover Profile Screen.png" alt="Preview of DishCover mobile application">
             </div>
         </section>
+
         <section>
-            <h2 class="projects-heading">Task Manager</h2>
-            <div class="ux-bites-container">
-                <p class="ux-bites-text">UX Bites</p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">Task Manager</h2>
+                    <span class="ux-bites">UX Bites</span>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">2 screens</span>
+                </div>
             </div>
             <div class="carousel">
                 <img class="mockup-img" src="img/task-manager/Task Manager.png" alt="Preview of Task Manager UX Bites project">
                 <img class="mockup-img" src="img/task-manager/tooltip_task_manager_mockup.png" alt="Preview of Task Manager UX Bites project">
             </div>
-        </section>  
+        </section>
+
         <section>
-            <h2 class="projects-heading">FoodLink</h2>
-            <p class="know-more-text"><a href="foodlink-project.html">know more</a></p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">FoodLink</h2>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">9 screens</span>
+                    <a class="know-more" href="foodlink-project.html">Know more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
             <div class="carousel">
                 <img class="mockup-img" src="img/foodlink-project/939shots_so.png" alt="Preview of FoodLink mobile application">
                 <img class="mockup-img" src="img/foodlink-project/624shots_so.png" alt="Preview of FoodLink mobile application">
@@ -68,9 +97,14 @@
         </section>
 
         <section>
-            <h2 class="projects-heading">Football Team Manager</h2>
-            <div class="ux-bites-container">
-                <p class="ux-bites-text">UX Bites</p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">Football Team Manager</h2>
+                    <span class="ux-bites">UX Bites</span>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">2 screens</span>
+                </div>
             </div>
             <div class="carousel">
                 <img class="desktop-mockup-img" src="img/ftm-project/823shots_so.webp" alt="Preview of Football Team Manager web">
@@ -79,8 +113,15 @@
         </section>
 
         <section>
-            <h2 class="projects-heading">It's my turn game</h2>
-            <p class="know-more-text"><a href="its-my-turn-game.html">know more</a></p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">It's my turn game</h2>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">6 screens</span>
+                    <a class="know-more" href="its-my-turn-game.html">Know more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
             <div class="carousel">
                 <img class="desktop-mockup-img" src="img/its-my-turn-game/485shots_so.webp" alt="Preview of It's my turn game">
                 <img class="desktop-mockup-img" src="img/its-my-turn-game/508shots_so.webp" alt="Preview of It's my turn game">
@@ -92,8 +133,15 @@
         </section>
 
         <section>
-            <h2 class="projects-heading">Brand guidelines project</h2>
-            <p class="know-more-text"><a href="brand-guidelines.html">know more</a></p>
+            <div class="project-head">
+                <div class="project-title-group">
+                    <h2 class="projects-heading">Brand guidelines project</h2>
+                </div>
+                <div class="project-meta">
+                    <span class="project-count">6 screens</span>
+                    <a class="know-more" href="brand-guidelines.html">Know more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
             <div class="carousel">
                 <img class="desktop-mockup-img" src="img/brand-guidelines-project/home.webp" alt="Preview of Brand guidelines project">
                 <img class="desktop-mockup-img" src="img/brand-guidelines-project/personality.webp" alt="Preview of Brand guidelines project">
@@ -101,15 +149,29 @@
                 <img class="desktop-mockup-img" src="img/brand-guidelines-project/color.webp" alt="Preview of Brand guidelines project">
                 <img class="desktop-mockup-img" src="img/brand-guidelines-project/visuals.webp" alt="Preview of Brand guidelines project">
                 <img class="desktop-mockup-img" src="img/brand-guidelines-project/typography.webp" alt="Preview of Brand guidelines project">
+            </div>
         </section>
     </main>
 
     <footer id="contact">
-        <a href="mailto:isaacruiiiz04@gmail.com" target="_blank">Email</a>
-        <a href="https://www.linkedin.com/in/isaac-ruiz-calero-00a990294/" target="_blank">Linkedin</a>
-        <a href="https://instagram.com/sameuxdesigns" target="_blank">Instagram</a>
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-list">
+            <a class="contact-row" href="mailto:isaacruiiiz04@gmail.com" target="_blank">
+                <span class="contact-label">Email</span>
+                <span class="contact-hint"><span class="contact-hint-text">isaacruiiiz04@gmail.com</span> <span class="contact-arrow" aria-hidden="true">↗</span></span>
+            </a>
+            <a class="contact-row" href="https://www.linkedin.com/in/isaac-ruiz-calero-00a990294/" target="_blank">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-hint"><span class="contact-hint-text">Isaac Ruiz-Calero</span> <span class="contact-arrow" aria-hidden="true">↗</span></span>
+            </a>
+            <a class="contact-row" href="https://instagram.com/sameuxdesigns" target="_blank">
+                <span class="contact-label">Instagram</span>
+                <span class="contact-hint"><span class="contact-hint-text">@sameuxdesigns</span> <span class="contact-arrow" aria-hidden="true">↗</span></span>
+            </a>
+        </div>
+        <p class="copyright">© 2026 Isaac Ruiz-Calero · Barcelona</p>
     </footer>
-</body>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

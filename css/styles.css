@@ -1,195 +1,305 @@
+/* ==========================================================================
+   Tokens (sistema de diseño de RunList)
+   ========================================================================== */
+:root {
+    --bg: #000000;
+    --surface-1: #0B0F17;
+    --surface-2: #121826;
+    --text: #E6E6E6;
+    --text-2: #A3ADBF;
+    --text-3: #7A8597;
+    --accent: #8AA8DF;
+    --accent-hover: #9EBAEE;
+    --accent-wash: rgba(138, 168, 223, 0.1);
+    --accent-glow: rgba(138, 168, 223, 0.2);
+    --hairline: rgba(255, 255, 255, 0.07);
+    --glass-fill: rgba(0, 0, 0, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --glass-blur: 7.5px;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --font-title: "Outfit", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
 ::selection {
-    background: #8AA8DF;
-    color: #E6E6E6;
+    background: var(--accent-glow);
+    color: var(--text);
 }
 
 html {
-    background: black;
-}
-
-#mainTitle{
-    font-family: "Inter", sans-serif;
-    color: #E6E6E6;
-    font-weight: 500;
-    line-height: 1.12;
-    max-width: 1200px; 
-    word-wrap: break-word; 
-    overflow-wrap: break-word;
-    white-space: normal;
-    display: block;
-    margin: 0 auto;
-    gap: 8px;
-}
-
-@media (min-width: 1200px) {
-    #mainTitle {
-        font-family: "Inter", sans-serif;
-        color: #E6E6E6;
-        font-weight: 500;
-        line-height: 1.12;
-        max-width: 1200px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        margin-top: 15%;
-        gap: 8px;
-    }
-}
-
-.arrow-icon {
-    display: inline-flex;
-    align-items: center;
-    transform: rotate(90deg);
-}
-
-.arrow-icon svg {
-    width: 30px;
-    height: 30px;
-    color: #8AA8DF;
-    transition: 0.5s ease-in-out;
-}
-
-.arrow-icon:hover svg {
-    filter: blur(2px);
-    cursor: pointer;
-}
-
-#mainTitle h1 {
-    font-size: clamp(1.5rem, 12vw, 50px);
-    font-weight: 500;
-    margin-top: auto;
-}
-
-#mainTitle-cta {
-    color: #8AA8DF;
-}
-
-#mainTitle-light {
-    font-weight: 300;
-    color: #A9A9A9;
-}
-
-header {
-    max-width: 100%;
-    padding: 20px;
-    display: flex;
-    align-items: start;
+    background: var(--bg);
 }
 
 body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
 }
 
-#projects {
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-#get-in-touch-button {
-    width: 183px;
-    height: 63px;
-    background-color: rgba(0, 0, 0, 0.66);
-    border: 2px solid rgba(180, 180, 180, 0.33);
-    border-radius: 50px;
-    position: fixed;
-    bottom: 20px;
-    right: max(calc((100% - 1200px) / 2));
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-@media (max-width: 1200px) {
-    #get-in-touch-button {
-        right: 20px;
-    }
-}
-
-#get-in-touch-button:hover {
-    cursor: pointer;
-}
-
-#get-in-touch-button a {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-size: 1.35rem;
-    color: #E6E6E6;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+a {
     text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Cristal ahumado (botones y barra superior)
+   ========================================================================== */
+.glass-button,
+.arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: var(--glass-fill);
+    border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    transition: transform 0.3s var(--ease);
+}
+
+.glass-button:active,
+.arrow-icon:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================================================
+   Barra superior
+   ========================================================================== */
+#site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass-fill);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--hairline);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.nav-brand {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-2);
+    transition: color 0.3s var(--ease);
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.glass-button {
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 24px;
+}
+
+.glass-button-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent);
     transition: filter 0.5s ease-in-out;
 }
 
-#get-in-touch-button:hover a {
+.glass-button:hover .glass-button-text {
     filter: blur(2px);
 }
 
-.projects-heading {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-size: clamp(1.5rem, 10vw, 42px);
-    max-width: 100%;
-    color: #E6E6E6;
-    margin: 0;
-    padding: 20px;
-    padding-bottom: 0;
-    margin-top: 100px;
-    margin-bottom: 0px;
+/* ==========================================================================
+   Título principal
+   ========================================================================== */
+#mainTitle {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 128px 24px 96px;
+    box-sizing: border-box;
 }
 
+#mainTitle h1 {
+    margin: 0;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 60px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    overflow-wrap: break-word;
+}
 
-.know-more-text {
-    font-family: "Inter", sans-serif;
+#mainTitle-cta {
+    color: var(--accent);
+}
+
+#mainTitle-light {
     font-weight: 300;
-    font-size: clamp(0.75rem, 4vw, 16px);
-    max-width: 1200px; 
+    color: var(--text-2);
+}
+
+.arrow-icon {
+    vertical-align: middle;
+    width: 56px;
+    height: 56px;
+    margin-left: 8px;
+    border-radius: 28px;
+}
+
+.arrow-icon svg {
+    width: 24px;
+    height: 24px;
+    transform: rotate(90deg);
+    transition: filter 0.5s ease-in-out;
+}
+
+.arrow-icon:hover svg {
+    filter: blur(2px);
+}
+
+/* ==========================================================================
+   Proyectos
+   ========================================================================== */
+#projects {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.work-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.section-title {
     margin: 0;
-    padding: 20px;
-    padding-top: 5px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text);
 }
 
-.know-more-text a {
-    color: #A9A9A9;
-    text-decoration: underline;
-    transition: 0.5s ease-in-out;;
+.work-count {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-3);
 }
 
-.know-more-text a:hover {
-    color: #8AA8DF;
+#projects > section + section {
+    margin-top: 96px;
 }
 
-.ux-bites-container {
+.project-head {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: #8AA8DF 2px solid;
-    padding: 5px;
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    max-width: 75px;
-    max-height: 20px;
-    border-radius: 50px;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: clamp(0.75rem, 4vw, 16px);
-    color: #8AA8DF;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
-.ux-bites-container:hover {
+.project-title-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.projects-heading {
+    margin: 0;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: clamp(1.75rem, 2.4vw, 2.125rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+.ux-bites {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--accent);
     user-select: none;
 }
 
-/* Limpiamos la máscara del carousel pero mantenemos su estructura */
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.project-count {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-3);
+}
+
+.know-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent);
+    transition: color 0.3s var(--ease);
+}
+
+.know-more:hover {
+    color: var(--accent-hover);
+}
+
+/* Carrusel */
 .carousel {
     display: grid;
     place-content: flex-start;
@@ -198,69 +308,61 @@ body {
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin; 
-    scrollbar-color: #A9A9A9 transparent;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* BORRA las propiedades mask-image y transition que tenías aquí */
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-3) transparent;
+    margin: 0;
 }
 
-/* ---------------------------------------------------
-   NUEVO: Sombras suaves para los carruseles 
-   --------------------------------------------------- */
+/* Sombras suaves en los extremos de los carruseles */
 .carousel-wrapper {
     position: relative;
     width: 100%;
 }
 
-/* Creamos las dos sombras (izquierda y derecha) */
 .carousel-wrapper::before,
 .carousel-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 8px; /* Deja libre la scrollbar por si aparece */
-    width: 80px; /* Ancho del difuminado */
+    width: 80px;
     pointer-events: none; /* Permite hacer clic en las imágenes a través de la sombra */
     z-index: 10;
-    transition: opacity 0.4s ease-in-out; /* ESTO HACE LA MAGIA SUAVE */
+    transition: opacity 0.4s ease-in-out;
     height: 100%;
 }
 
-/* Sombra Izquierda (Oculta al inicio) */
+/* Izquierda: oculta al inicio */
 .carousel-wrapper::before {
-    left: 20px; /* Coincide con el margin del carousel */
+    left: 0;
     background: linear-gradient(to right, black 0%, transparent 100%);
-    opacity: 0; 
+    opacity: 0;
 }
 
-/* Sombra Derecha (Visible al inicio) */
+/* Derecha: visible al inicio */
 .carousel-wrapper::after {
-    right: 20px; /* Coincide con el margin del carousel */
+    right: 0;
     background: linear-gradient(to left, black 0%, transparent 100%);
-    opacity: 1; 
+    opacity: 1;
 }
 
-/* ESTADO 2: Al empezar a mover (Aparece suavemente la izquierda) */
 .carousel-wrapper.is-scrolled::before {
     opacity: 1;
 }
 
-/* ESTADO 3: Al llegar al final (Desaparece suavemente la derecha) */
 .carousel-wrapper.is-end::after {
     opacity: 0;
 }
 
-/* ESTADO SEGURIDAD: Si todo el carrusel cabe en pantalla, no hay sombras */
+/* Si todo el carrusel cabe en pantalla, no hay sombras */
 .carousel-wrapper.no-mask::before,
 .carousel-wrapper.no-mask::after {
     opacity: 0 !important;
 }
 
-
 @media (min-width: 1200px) {
     .carousel {
-        overflow-x: scroll; 
+        overflow-x: scroll;
     }
 }
 
@@ -290,28 +392,171 @@ body {
     .mockup-img {
         width: 300px;
     }
-    
 }
 
+/* ==========================================================================
+   Contacto
+   ========================================================================== */
 #contact {
     margin: 0 auto;
     max-width: 1200px;
-    margin-top: 100px;
-    padding: 20px;
+    padding: 128px 24px 64px;
+    box-sizing: border-box;
+}
+
+#contact .section-title {
+    margin-bottom: 32px;
+}
+
+.contact-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    border-top: 1px solid var(--hairline);
 }
 
-#contact a {
-    font-family: Inter;
-    color: #8AA8DF;
-    text-decoration: none;
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 8px;
+    border-bottom: 1px solid var(--hairline);
+    border-radius: 12px;
+    transition: background 0.3s var(--ease);
+}
+
+.contact-row:hover {
+    background: var(--accent-wash);
+}
+
+.contact-label {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    transition: color 0.3s var(--ease);
+}
+
+.contact-row:hover .contact-label {
+    color: var(--accent);
+}
+
+.contact-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--text-2);
+}
+
+.contact-arrow {
+    color: var(--accent);
+}
+
+.copyright {
+    margin: 64px 0 0;
+    font-size: 14px;
     font-weight: 500;
-    font-size: 20px;
-    transition: color 0.3s ease-in-out;
+    color: var(--text-3);
 }
 
-#contact a:hover {
-    text-decoration: underline;
+/* ==========================================================================
+   Móvil
+   ========================================================================== */
+@media (max-width: 640px) {
+    .nav-inner {
+        padding: 12px 24px;
+    }
+
+    .nav-brand {
+        font-size: 18px;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .glass-button {
+        min-height: 44px;
+        padding: 0 20px;
+        border-radius: 22px;
+    }
+
+    .glass-button-text {
+        font-size: 14px;
+    }
+
+    #mainTitle {
+        padding: 48px 24px 64px;
+    }
+
+    .arrow-icon {
+        width: 48px;
+        height: 48px;
+        margin-left: 4px;
+        border-radius: 24px;
+    }
+
+    .section-title {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .work-heading {
+        margin-bottom: 32px;
+    }
+
+    #projects > section + section {
+        margin-top: 56px;
+    }
+
+    .project-head {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin-bottom: 16px;
+    }
+
+    .project-meta {
+        justify-content: space-between;
+    }
+
+    #contact {
+        padding: 80px 24px 48px;
+    }
+
+    #contact .section-title {
+        margin-bottom: 24px;
+    }
+
+    .contact-row {
+        min-height: 64px;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+    .contact-label {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .contact-hint-text {
+        display: none;
+    }
+
+    .contact-arrow {
+        font-size: 18px;
+    }
+
+    .copyright {
+        margin-top: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
 }
