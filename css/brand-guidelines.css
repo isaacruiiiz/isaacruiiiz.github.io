@@ -13,6 +13,7 @@ body {
 }
 
 #work-in-progress-heading {
+    font-family: "Outfit", "Inter", sans-serif;
     position: absolute;
     z-index: 2;
     font-size: 48px;
